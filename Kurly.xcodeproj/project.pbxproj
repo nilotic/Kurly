@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7007C592976C973000B874A /* LogType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7007C572976C973000B874A /* LogType.swift */; };
+		B7007C5A2976C973000B874A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7007C582976C973000B874A /* Logger.swift */; };
 		B78603852976C6FA000F611F /* KurlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78603842976C6FA000F611F /* KurlyApp.swift */; };
 		B78603872976C6FA000F611F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78603862976C6FA000F611F /* ContentView.swift */; };
 		B78603892976C6FC000F611F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78603882976C6FC000F611F /* Assets.xcassets */; };
 		B786038C2976C6FC000F611F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B786038B2976C6FC000F611F /* Preview Assets.xcassets */; };
-		B78603962976C75D000F611F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78603942976C75D000F611F /* Logger.swift */; };
-		B78603972976C75D000F611F /* LogType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78603952976C75D000F611F /* LogType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B7007C572976C973000B874A /* LogType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogType.swift; sourceTree = "<group>"; };
+		B7007C582976C973000B874A /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		B78603812976C6FA000F611F /* Kurly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kurly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B78603842976C6FA000F611F /* KurlyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KurlyApp.swift; sourceTree = "<group>"; };
 		B78603862976C6FA000F611F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B78603882976C6FC000F611F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B786038B2976C6FC000F611F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B78603942976C75D000F611F /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		B78603952976C75D000F611F /* LogType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +83,8 @@
 		B78603932976C75D000F611F /* Logger */ = {
 			isa = PBXGroup;
 			children = (
-				B78603942976C75D000F611F /* Logger.swift */,
-				B78603952976C75D000F611F /* LogType.swift */,
+				B7007C582976C973000B874A /* Logger.swift */,
+				B7007C572976C973000B874A /* LogType.swift */,
 			);
 			path = Logger;
 			sourceTree = "<group>";
@@ -159,10 +159,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B78603972976C75D000F611F /* LogType.swift in Sources */,
 				B78603872976C6FA000F611F /* ContentView.swift in Sources */,
-				B78603962976C75D000F611F /* Logger.swift in Sources */,
 				B78603852976C6FA000F611F /* KurlyApp.swift in Sources */,
+				B7007C592976C973000B874A /* LogType.swift in Sources */,
+				B7007C5A2976C973000B874A /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
