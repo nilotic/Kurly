@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B7007C592976C973000B874A /* LogType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7007C572976C973000B874A /* LogType.swift */; };
 		B7007C5A2976C973000B874A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7007C582976C973000B874A /* Logger.swift */; };
+		B7007C602976CACC000B874A /* LocaleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7007C5D2976CACC000B874A /* LocaleManager.swift */; };
 		B78603852976C6FA000F611F /* KurlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78603842976C6FA000F611F /* KurlyApp.swift */; };
 		B78603872976C6FA000F611F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78603862976C6FA000F611F /* ContentView.swift */; };
 		B78603892976C6FC000F611F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78603882976C6FC000F611F /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		B7007C572976C973000B874A /* LogType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogType.swift; sourceTree = "<group>"; };
 		B7007C582976C973000B874A /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		B7007C5D2976CACC000B874A /* LocaleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocaleManager.swift; sourceTree = "<group>"; };
 		B78603812976C6FA000F611F /* Kurly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kurly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B78603842976C6FA000F611F /* KurlyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KurlyApp.swift; sourceTree = "<group>"; };
 		B78603862976C6FA000F611F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +38,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B7007C5C2976CACC000B874A /* Locale */ = {
+			isa = PBXGroup;
+			children = (
+				B7007C5D2976CACC000B874A /* LocaleManager.swift */,
+			);
+			path = Locale;
+			sourceTree = "<group>";
+		};
 		B78603782976C6FA000F611F = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +85,7 @@
 		B78603922976C73A000F611F /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				B7007C5C2976CACC000B874A /* Locale */,
 				B78603932976C75D000F611F /* Logger */,
 			);
 			path = Util;
@@ -160,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B78603872976C6FA000F611F /* ContentView.swift in Sources */,
+				B7007C602976CACC000B874A /* LocaleManager.swift in Sources */,
 				B78603852976C6FA000F611F /* KurlyApp.swift in Sources */,
 				B7007C592976C973000B874A /* LogType.swift in Sources */,
 				B7007C5A2976C973000B874A /* Logger.swift in Sources */,
