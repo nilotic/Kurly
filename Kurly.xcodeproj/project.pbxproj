@@ -15,6 +15,7 @@
 		B78603892976C6FC000F611F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78603882976C6FC000F611F /* Assets.xcassets */; };
 		B786038C2976C6FC000F611F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B786038B2976C6FC000F611F /* Preview Assets.xcassets */; };
 		B79CF93E29777C4800284B6D /* VersionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79CF93D29777C4800284B6D /* VersionManager.swift */; };
+		B79CF94129777D0B00284B6D /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79CF94029777D0B00284B6D /* UserDefaultsKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		B78603882976C6FC000F611F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B786038B2976C6FC000F611F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B79CF93D29777C4800284B6D /* VersionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionManager.swift; sourceTree = "<group>"; };
+		B79CF94029777D0B00284B6D /* UserDefaultsKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			children = (
 				B7007C5C2976CACC000B874A /* Locale */,
 				B78603932976C75D000F611F /* Logger */,
+				B79CF93F29777D0B00284B6D /* UserDefault */,
 				B79CF93C29777C4800284B6D /* Version */,
 			);
 			path = Util;
@@ -109,6 +112,14 @@
 				B79CF93D29777C4800284B6D /* VersionManager.swift */,
 			);
 			path = Version;
+			sourceTree = "<group>";
+		};
+		B79CF93F29777D0B00284B6D /* UserDefault */ = {
+			isa = PBXGroup;
+			children = (
+				B79CF94029777D0B00284B6D /* UserDefaultsKey.swift */,
+			);
+			path = UserDefault;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +195,7 @@
 				B78603872976C6FA000F611F /* ContentView.swift in Sources */,
 				B7007C602976CACC000B874A /* LocaleManager.swift in Sources */,
 				B78603852976C6FA000F611F /* KurlyApp.swift in Sources */,
+				B79CF94129777D0B00284B6D /* UserDefaultsKey.swift in Sources */,
 				B7007C592976C973000B874A /* LogType.swift in Sources */,
 				B79CF93E29777C4800284B6D /* VersionManager.swift in Sources */,
 				B7007C5A2976C973000B874A /* Logger.swift in Sources */,
