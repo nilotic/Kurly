@@ -25,12 +25,12 @@ extension KurlyServer {
     var rawValue: String {
         switch self {
         #if DEBUG
-        case .development:  return "https://developer.github.com"
-        case .stage:        return "https://developer.github.com"
-        case .production:   return "https://developer.github.com"
+        case .development:  return "https://api.github.com"
+        case .stage:        return "https://api.github.com"
+        case .production:   return "https://api.github.com"
         
         #else
-        default:            return "https://developer.github.com"
+        default:            return "https://api.github.com"
         #endif
         }
     }
