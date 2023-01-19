@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 final class SearchData: ObservableObject {
     
@@ -13,8 +14,6 @@ final class SearchData: ObservableObject {
     // MARK: Public
     @Published var keyword = ""
     
-    @Published private(set) var recentlySearchedKeywords = [String]()
     
-    @Published private(set) var autoCompletes = [String]()
     
 }

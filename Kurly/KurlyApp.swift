@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct KurlyApp: App {
+    
+    // MARK: - Scene
+    // MARK: Public
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SearchView()
         }
     }
 }
