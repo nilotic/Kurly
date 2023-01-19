@@ -76,24 +76,34 @@ extension ToastModifier: ViewModifier {
 struct ToastModifier_Previews: PreviewProvider {
     
     static var previews: some View {
-        let view =  Color.clear
+        let backgroundView = Color.clear
             .frame(maxWidth:. infinity)
         
-        return VStack(spacing: 0) {
-            view
+        let view = VStack(spacing: 0) {
+            backgroundView
                 .toast(message: .constant("토스트 메세지 팝업입니다."))
             
-            view
+            backgroundView
                 .toast(message: .constant("토스트 메세지 팝업입니다. 토스트 메세지"))
             
-            view
+            backgroundView
                 .toast(message: .constant("토스트 메세지 팝업입니다. 토스트 메세지 팝업입니다. 토스트 메세지 팝업입니다."))
             
-            view
+            backgroundView
                 .toast(message: .constant("토스트 메세지 팝업입니다.\n토스트 메세지 팝업입니다. 토스트 메세지 팝업입니다."))
             
-            view
+            backgroundView
                 .toast(message: .constant("토스트 메세지 팝업입니다.\n토스트 메세지 팝업입니다.\n토스트 메세지 팝업입니다."))
+        }
+        
+        return Group {
+            view
+                .previewDevice("iPhone 11 Pro")
+                .preferredColorScheme(.light)
+            
+            view
+                .previewDevice("iPhone 11 Pro")
+                .preferredColorScheme(.dark)
         }
     }
 }
