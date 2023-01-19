@@ -76,10 +76,10 @@ final class NetworkManager: NSObject {
     
         case .put:
             if let contentType = request.value(forHTTPHeaderField: HTTPHeaderField.contentType.rawValue) {
-                if contentType.range(of: HTTPHeaderValue.urlEncoded.rawValue) != nil {
+                if contentType.range(of: HTTPHeaderValue.application(.urlEncoded).rawValue) != nil {
                     request.httpBody = urlComponets(from: request.url, data: requestData)?.query?.data(using: .utf8, allowLossyConversion: false)
                     
-                } else if contentType.hasPrefix(HTTPHeaderValue.applicationJSON.rawValue) {
+                } else if contentType.hasPrefix(HTTPHeaderValue.application(.json).rawValue) {
                     do { request.httpBody = try encoder.encode(requestData) } catch { return nil }
                 
                 } else if contentType.hasPrefix(HTTPHeaderValue.multipart(.formData("")).rawValue) {
@@ -92,10 +92,10 @@ final class NetworkManager: NSObject {
             
         case .post:
             if let contentType = request.value(forHTTPHeaderField: HTTPHeaderField.contentType.rawValue) {
-                if contentType.range(of: HTTPHeaderValue.urlEncoded.rawValue) != nil {
+                if contentType.range(of: HTTPHeaderValue.application(.urlEncoded).rawValue) != nil {
                     request.httpBody = urlComponets(from: request.url, data: requestData)?.query?.data(using: .utf8, allowLossyConversion: false)
                     
-                } else if contentType.hasPrefix(HTTPHeaderValue.applicationJSON.rawValue) {
+                } else if contentType.hasPrefix(HTTPHeaderValue.application(.json).rawValue) {
                     do { request.httpBody = try encoder.encode(requestData) } catch { return nil }
                 
                 } else if contentType.hasPrefix(HTTPHeaderValue.multipart(.formData("")).rawValue) {
@@ -108,10 +108,10 @@ final class NetworkManager: NSObject {
             
         case .delete:
             if let contentType = request.value(forHTTPHeaderField: HTTPHeaderField.contentType.rawValue) {
-                if contentType.range(of: HTTPHeaderValue.urlEncoded.rawValue) != nil {
+                if contentType.range(of: HTTPHeaderValue.application(.urlEncoded).rawValue) != nil {
                     request.httpBody = urlComponets(from: request.url, data: requestData)?.query?.data(using: .utf8, allowLossyConversion: false)
                     
-                } else if contentType.hasPrefix(HTTPHeaderValue.applicationJSON.rawValue) {
+                } else if contentType.hasPrefix(HTTPHeaderValue.application(.json).rawValue) {
                     do { request.httpBody = try encoder.encode(requestData) } catch { return nil }
                 
                 } else if contentType.hasPrefix(HTTPHeaderValue.multipart(.formData("")).rawValue) {

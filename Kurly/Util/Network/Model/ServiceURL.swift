@@ -8,7 +8,7 @@
 import Foundation
 
 enum ServiceURL {
-    case search
+    case searchRepository
 }
 
 extension ServiceURL {
@@ -17,8 +17,8 @@ extension ServiceURL {
         guard let url = url else { return nil }
         switch url {
         // Collection
-        case ServiceURL.search.rawValue:        self = .search
-        default:                                return nil
+        case ServiceURL.searchRepository.rawValue:      self = .searchRepository
+        default:                                        return nil
         }
     }
     
@@ -32,7 +32,7 @@ extension ServiceURL {
     
     var rawValue: URL {
         switch self {
-        case .search:       return URL(string: "\(Host.kurly(server: server).rawValue)/v3/search")!
+        case .searchRepository:     return URL(string: "\(Host.kurly(server: server).rawValue)/search/repositories")!
         }
     }
 }

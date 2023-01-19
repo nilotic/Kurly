@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  Kurly
+
+  Created by Den Jo on 2023/01/18.
+  
+*/
+
+// MARK: - Common
+"yes" = "예";
+"no" = "아니오";
+"ok" = "확인";
+"cancel" = "취소";
+"close" = "닫기";
+"next" = "다음";
+"change" = "변경";
+"done" = "완료";
+"add" = "추가";
+"create" = "만들기";
+"edit" = "편집";
+"save" = "저장";
+"remove" = "제거";
+"delete" = "삭제";
+
+
+// MARK: - Network
+"connection_error_message" = "서버와의 통신이 원활하지 않습니다.";
+"temporary_error_message" = "일시적인 오류가 발생하였습니다. 잠시 후 다시 시도해 주세요.";
+
+
+// MARK: - Search
+"search_searchbar_placeholder" = "저장소 검색";
+"search_recently_searched_keyword" = "최근 검색";
+"search_history" = "최근 6개월 저장소 검색";
+"search_delete_all" = "전체삭제";
+"search_empty_searched_keyword" = "최근 검색한 내역이 없습니다";
+"search_empty_result" = "검색 결과가 없습니다";

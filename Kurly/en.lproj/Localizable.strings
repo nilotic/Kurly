@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  Kurly
+
+  Created by Den Jo on 2023/01/18.
+  
+*/
+
+// MARK: - Common
+"yes" = "Yes";
+"no" = "No";
+"ok" = "OK";
+"cancel" = "Cancel";
+"close" = "Close";
+"next" = "Next";
+"change" = "Change";
+"done" = "Done";
+"add" = "Add";
+"create" = "Create";
+"edit" = "Edit";
+"save" = "Save";
+"remove" = "Remove";
+"delete" = "Delete";
+
+
+// MARK: - Network
+"connection_error_message" = "Please check your network connection or try again.";
+"temporary_error_message" = "Sorry there has been a temporary error. Please try again after a while.";
+
+
+// MARK: - Search
+"search_searchbar_placeholder" = "Search Repositories";
+"search_recently_searched_keyword" = "Recently searched keywords";
+"search_history" = "Search repository history for the last 6 months";
+"search_delete_all" = "Delete all";
+"search_empty_searched_keyword" = "No recent searches";
+"search_empty_result" = "No repositories";
