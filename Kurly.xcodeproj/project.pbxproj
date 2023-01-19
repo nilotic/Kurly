@@ -11,6 +11,8 @@
 		B7007C5A2976C973000B874A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7007C582976C973000B874A /* Logger.swift */; };
 		B7007C602976CACC000B874A /* LocaleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7007C5D2976CACC000B874A /* LocaleManager.swift */; };
 		B76E1C982978F77D00A94AEA /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E1C972978F77D00A94AEA /* ImageManager.swift */; };
+		B76E1C9D2978F83E00A94AEA /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E1C9C2978F83E00A94AEA /* ToastModifier.swift */; };
+		B76E1CA02978F87200A94AEA /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E1C9F2978F87200A94AEA /* ViewExtension.swift */; };
 		B78603852976C6FA000F611F /* KurlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78603842976C6FA000F611F /* KurlyApp.swift */; };
 		B78603872976C6FA000F611F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78603862976C6FA000F611F /* ContentView.swift */; };
 		B78603892976C6FC000F611F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78603882976C6FC000F611F /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 		B7007C582976C973000B874A /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		B7007C5D2976CACC000B874A /* LocaleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocaleManager.swift; sourceTree = "<group>"; };
 		B76E1C972978F77D00A94AEA /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		B76E1C9C2978F83E00A94AEA /* ToastModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
+		B76E1C9F2978F87200A94AEA /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		B78603812976C6FA000F611F /* Kurly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kurly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B78603842976C6FA000F611F /* KurlyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KurlyApp.swift; sourceTree = "<group>"; };
 		B78603862976C6FA000F611F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,6 +88,31 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		B76E1C9A2978F81D00A94AEA /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				B76E1C9B2978F82400A94AEA /* Toast */,
+				B76E1C9E2978F86600A94AEA /* View */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		B76E1C9B2978F82400A94AEA /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				B76E1C9C2978F83E00A94AEA /* ToastModifier.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		B76E1C9E2978F86600A94AEA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B76E1C9F2978F87200A94AEA /* ViewExtension.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B78603782976C6FA000F611F = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +134,7 @@
 			children = (
 				B78603842976C6FA000F611F /* KurlyApp.swift */,
 				B78603862976C6FA000F611F /* ContentView.swift */,
+				B76E1C9A2978F81D00A94AEA /* Component */,
 				B78603922976C73A000F611F /* Util */,
 				B78603882976C6FC000F611F /* Assets.xcassets */,
 				B786038A2976C6FC000F611F /* Preview Content */,
@@ -261,7 +291,9 @@
 				B7007C602976CACC000B874A /* LocaleManager.swift in Sources */,
 				B79CF95329777DE500284B6D /* HTTPMethod.swift in Sources */,
 				B79CF95929777DE500284B6D /* URLRequestExtension.swift in Sources */,
+				B76E1CA02978F87200A94AEA /* ViewExtension.swift in Sources */,
 				B79CF95A29777DE500284B6D /* HTTPStatusCode.swift in Sources */,
+				B76E1C9D2978F83E00A94AEA /* ToastModifier.swift in Sources */,
 				B79CF95429777DE500284B6D /* Response.swift in Sources */,
 				B79CF95729777DE500284B6D /* HTTPHeaderValue.swift in Sources */,
 				B78603852976C6FA000F611F /* KurlyApp.swift in Sources */,
