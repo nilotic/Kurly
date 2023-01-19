@@ -45,7 +45,7 @@ struct SearchKeywordsView: View {
             VStack(spacing: 0) {
                 ForEach(data.keywords) { keyword in
                     SearchKeywordView(data: keyword) {
-                        //data.handle(keyword: keyword)
+                        data.handle(keyword: keyword)
                         
                     } removeAction: {
                         data.delete(keyword: keyword)
@@ -53,6 +53,7 @@ struct SearchKeywordsView: View {
                 }
             }
         }
+        .frame(height: min(CGFloat(data.keywords.count) * 48, 480))
     }
     
     private var emptyView: some View {

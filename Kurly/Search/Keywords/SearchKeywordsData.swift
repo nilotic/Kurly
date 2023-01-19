@@ -12,6 +12,7 @@ import CoreData
 final class SearchKeywordsData: ObservableObject {
     
     // MARK: - Value
+    // MARK: Public
     @Published private(set) var keywords = SearchKeyword.keywords //[SearchKeyword]()
     
     // MARK: Private
@@ -58,6 +59,26 @@ final class SearchKeywordsData: ObservableObject {
                 
             } catch {
                 log(.error, error.localizedDescription)
+            }
+        }
+    }
+    
+    func handle(keyword: SearchKeyword) {
+        Task {
+            var updatedKeywords = keywords
+            
+            guard let index = updatedKeywords.firstIndex(where: { $0 == keyword }) else { return }
+            var searchKeyword = updatedKeywords.remove(at: index)
+            searchKeyword.date = Date()
+            
+            updatedKeywords.insert(searchKeyword, at: 0)
+            
+            let keywords = updatedKeywords
+            
+            await MainActor.run {
+                withAnimation(.spring(response: 0.38, dampingFraction: 0.9)) {
+                    self.keywords = keywords
+                }
             }
         }
     }
