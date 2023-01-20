@@ -32,11 +32,11 @@ struct SearchView: View {
     private var contentsView: some View {
         ZStack {
             SearchKeywordsView()
-                .opacity(data.keyword.isEmpty ? 1 : 0)
+                .opacity(data.submittedKeyword.isEmpty ? 1 : 0)
                 .environmentObject(data)
             
             SearchResultView()
-                .opacity(data.keyword.isEmpty ? 0 : 1)
+                .opacity(data.submittedKeyword.isEmpty ? 0 : 1)
                 .environmentObject(data)
         }
     }
