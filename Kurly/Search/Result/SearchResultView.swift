@@ -46,9 +46,16 @@ struct SearchResultView: View {
             totalCountView
             
             ScrollView {
-                VStack(spacing: 0) {
+                LazyVStack(spacing: 0) {
                     ForEach(data.repositories) {
                         GitHubRepositoryView(data: $0)
+                    }
+                    
+                    if data.nextPage != nil {
+                        GitHubRepositoryProgressView()
+                            .onAppear {
+                                data.requestNext()
+                            }
                     }
                 }
             }

@@ -11,6 +11,7 @@
 		B7007C5A2976C973000B874A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7007C582976C973000B874A /* Logger.swift */; };
 		B70D6FBB2977807B00D3F45D /* SearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70D6FB92977807B00D3F45D /* SearchData.swift */; };
 		B70D6FBC2977807B00D3F45D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70D6FBA2977807B00D3F45D /* SearchView.swift */; };
+		B71E985F297A4F9500844AE6 /* GitHubRepositoryProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71E985E297A4F9500844AE6 /* GitHubRepositoryProgressView.swift */; };
 		B72FBA0C2978E57E00AAA960 /* SearchKeywordsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FBA0B2978E57E00AAA960 /* SearchKeywordsData.swift */; };
 		B76E1CAE2978FD1600A94AEA /* FramePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E1CA92978FD1600A94AEA /* FramePreferenceKey.swift */; };
 		B76E1CAF2978FD1600A94AEA /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E1CAB2978FD1600A94AEA /* ToastModifier.swift */; };
@@ -37,6 +38,14 @@
 		B7AE20AB2977B13100BCACF8 /* HTTPHeaderApplicationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AE20AA2977B13100BCACF8 /* HTTPHeaderApplicationType.swift */; };
 		B7AE20B52977BBC300BCACF8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B7AE20B72977BBC300BCACF8 /* Localizable.strings */; };
 		B7AE20B82977BBC600BCACF8 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = B7AE20BA2977BBC600BCACF8 /* Localizable.stringsdict */; };
+		B7BC3F51297900650071DB71 /* SearchResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC3F48297900650071DB71 /* SearchResultData.swift */; };
+		B7BC3F52297900650071DB71 /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC3F49297900650071DB71 /* SearchResultView.swift */; };
+		B7BC3F53297900660071DB71 /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC3F4B297900650071DB71 /* SearchRequest.swift */; };
+		B7BC3F54297900660071DB71 /* GitHubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC3F4C297900650071DB71 /* GitHubRepository.swift */; };
+		B7BC3F55297900660071DB71 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC3F4D297900650071DB71 /* SearchResponse.swift */; };
+		B7BC3F56297900660071DB71 /* GitHubRepositoryOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC3F4E297900650071DB71 /* GitHubRepositoryOwner.swift */; };
+		B7BC3F57297900660071DB71 /* GitHubRepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC3F50297900650071DB71 /* GitHubRepositoryView.swift */; };
+		B7BC3F5A297900DA0071DB71 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC3F59297900DA0071DB71 /* ImageView.swift */; };
 		B7DB563D2977A972001FD8FE /* SearchKeyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DB563C2977A972001FD8FE /* SearchKeyword.swift */; };
 		B7DB56402977A9B8001FD8FE /* SearchKeywords.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B7DB563E2977A9B8001FD8FE /* SearchKeywords.xcdatamodeld */; };
 		B7E38B3E297817F000A9C791 /* SearchKeywordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E38B3D297817F000A9C791 /* SearchKeywordsView.swift */; };
@@ -48,6 +57,7 @@
 		B7007C582976C973000B874A /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		B70D6FB92977807B00D3F45D /* SearchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchData.swift; sourceTree = "<group>"; };
 		B70D6FBA2977807B00D3F45D /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		B71E985E297A4F9500844AE6 /* GitHubRepositoryProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepositoryProgressView.swift; sourceTree = "<group>"; };
 		B72FBA0B2978E57E00AAA960 /* SearchKeywordsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchKeywordsData.swift; sourceTree = "<group>"; };
 		B76E1CA92978FD1600A94AEA /* FramePreferenceKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FramePreferenceKey.swift; sourceTree = "<group>"; };
 		B76E1CAB2978FD1600A94AEA /* ToastModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
@@ -77,6 +87,15 @@
 		B7AE20B92977BBC600BCACF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		B7AE20BB2977BC0F00BCACF8 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B7AE20BC2977BC1200BCACF8 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ko; path = ko.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		B7B1A319297970CE000A196C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B7BC3F48297900650071DB71 /* SearchResultData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultData.swift; sourceTree = "<group>"; };
+		B7BC3F49297900650071DB71 /* SearchResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
+		B7BC3F4B297900650071DB71 /* SearchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRequest.swift; sourceTree = "<group>"; };
+		B7BC3F4C297900650071DB71 /* GitHubRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubRepository.swift; sourceTree = "<group>"; };
+		B7BC3F4D297900650071DB71 /* SearchResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		B7BC3F4E297900650071DB71 /* GitHubRepositoryOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubRepositoryOwner.swift; sourceTree = "<group>"; };
+		B7BC3F50297900650071DB71 /* GitHubRepositoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubRepositoryView.swift; sourceTree = "<group>"; };
+		B7BC3F59297900DA0071DB71 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		B7DB563C2977A972001FD8FE /* SearchKeyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchKeyword.swift; sourceTree = "<group>"; };
 		B7DB563F2977A9B8001FD8FE /* SearchKeywords.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SearchKeywords.xcdatamodel; sourceTree = "<group>"; };
 		B7E38B3D297817F000A9C791 /* SearchKeywordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchKeywordsView.swift; sourceTree = "<group>"; };
@@ -99,6 +118,7 @@
 			children = (
 				B72FBA0F2978E5B200AAA960 /* Search */,
 				B72FBA0A2978E55500AAA960 /* Keywords */,
+				B7BC3F47297900650071DB71 /* Result */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -143,6 +163,7 @@
 		B76E1CA72978FD1600A94AEA /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				B7BC3F58297900C30071DB71 /* Image */,
 				B76E1CA82978FD1600A94AEA /* PreferenceKey */,
 				B76E1CAA2978FD1600A94AEA /* Toast */,
 				B76E1CAC2978FD1600A94AEA /* View */,
@@ -209,6 +230,7 @@
 		B78603832976C6FA000F611F /* Kurly */ = {
 			isa = PBXGroup;
 			children = (
+				B7B1A319297970CE000A196C /* Info.plist */,
 				B78603842976C6FA000F611F /* KurlyApp.swift */,
 				B70D6FB82977807B00D3F45D /* Search */,
 				B76E1CA72978FD1600A94AEA /* Component */,
@@ -295,6 +317,46 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B7BC3F47297900650071DB71 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				B7BC3F49297900650071DB71 /* SearchResultView.swift */,
+				B7BC3F48297900650071DB71 /* SearchResultData.swift */,
+				B7BC3F4F297900650071DB71 /* View */,
+				B7BC3F4A297900650071DB71 /* Model */,
+			);
+			name = Result;
+			path = Kurly/Search/Result;
+			sourceTree = SOURCE_ROOT;
+		};
+		B7BC3F4A297900650071DB71 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B7BC3F4C297900650071DB71 /* GitHubRepository.swift */,
+				B7BC3F4E297900650071DB71 /* GitHubRepositoryOwner.swift */,
+				B7BC3F4B297900650071DB71 /* SearchRequest.swift */,
+				B7BC3F4D297900650071DB71 /* SearchResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B7BC3F4F297900650071DB71 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B7BC3F50297900650071DB71 /* GitHubRepositoryView.swift */,
+				B71E985E297A4F9500844AE6 /* GitHubRepositoryProgressView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B7BC3F58297900C30071DB71 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				B7BC3F59297900DA0071DB71 /* ImageView.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -369,7 +431,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B76E1CAF2978FD1600A94AEA /* ToastModifier.swift in Sources */,
+				B7BC3F53297900660071DB71 /* SearchRequest.swift in Sources */,
+				B7BC3F52297900650071DB71 /* SearchResultView.swift in Sources */,
 				B79CF95229777DE500284B6D /* HTTPHeaderField.swift in Sources */,
+				B7BC3F56297900660071DB71 /* GitHubRepositoryOwner.swift in Sources */,
 				B76E1CB62978FD2700A94AEA /* ImageManager.swift in Sources */,
 				B72FBA0C2978E57E00AAA960 /* SearchKeywordsData.swift in Sources */,
 				B79CF95829777DE500284B6D /* MultipartType.swift in Sources */,
@@ -382,19 +447,25 @@
 				B79CF95729777DE500284B6D /* HTTPHeaderValue.swift in Sources */,
 				B76E1CAE2978FD1600A94AEA /* FramePreferenceKey.swift in Sources */,
 				B70D6FBC2977807B00D3F45D /* SearchView.swift in Sources */,
+				B7BC3F54297900660071DB71 /* GitHubRepository.swift in Sources */,
 				B7DB563D2977A972001FD8FE /* SearchKeyword.swift in Sources */,
 				B78603852976C6FA000F611F /* KurlyApp.swift in Sources */,
+				B7BC3F5A297900DA0071DB71 /* ImageView.swift in Sources */,
 				B79CF94129777D0B00284B6D /* UserDefaultsKey.swift in Sources */,
 				B7DB56402977A9B8001FD8FE /* SearchKeywords.xcdatamodeld in Sources */,
+				B7BC3F55297900660071DB71 /* SearchResponse.swift in Sources */,
 				B79CF95B29777DE500284B6D /* Host.swift in Sources */,
+				B7BC3F51297900650071DB71 /* SearchResultData.swift in Sources */,
 				B76E1CB02978FD1600A94AEA /* ViewExtension.swift in Sources */,
 				B7E38B3E297817F000A9C791 /* SearchKeywordsView.swift in Sources */,
 				B76E1CB52978FD2700A94AEA /* LocaleManager.swift in Sources */,
 				B79CF95029777DE500284B6D /* NetworkManager.swift in Sources */,
 				B79CF95529777DE500284B6D /* ServiceError.swift in Sources */,
 				B79CF95129777DE500284B6D /* ServiceURL.swift in Sources */,
+				B71E985F297A4F9500844AE6 /* GitHubRepositoryProgressView.swift in Sources */,
 				B7007C592976C973000B874A /* LogType.swift in Sources */,
 				B79CF93E29777C4800284B6D /* VersionManager.swift in Sources */,
+				B7BC3F57297900660071DB71 /* GitHubRepositoryView.swift in Sources */,
 				B79CF95629777DE500284B6D /* KurlyServer.swift in Sources */,
 				B7007C5A2976C973000B874A /* Logger.swift in Sources */,
 				B7AE20AB2977B13100BCACF8 /* HTTPHeaderApplicationType.swift in Sources */,
@@ -550,8 +621,8 @@
 				DEVELOPMENT_TEAM = C75HZNC664;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Kurly/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -580,8 +651,8 @@
 				DEVELOPMENT_TEAM = C75HZNC664;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Kurly/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";

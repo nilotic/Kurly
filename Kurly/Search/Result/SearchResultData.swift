@@ -13,7 +13,9 @@ final class SearchResultData: ObservableObject {
     // MARK: Public
     @Published private(set) var repositories     = [GitHubRepository]()
     @Published private(set) var totalCount: UInt = 0
-    @Published private(set) var isProgressing    = false
+    @Published private(set) var nextPage: UInt?  = nil
+
+    @Published private(set) var isProgressing = false
     
     @Published var toastMessage = ""
     
@@ -30,8 +32,8 @@ final class SearchResultData: ObservableObject {
     }
  
     // MARK: Private
-    private var keyword    = ""
-    private var page: UInt = 0
+    private var keyword = ""
+    private var task: Task<Void, Never>? = nil
     
     private lazy var decoder: JSONDecoder = {
         let decoder = JSONDecoder()
@@ -50,15 +52,14 @@ final class SearchResultData: ObservableObject {
                 let response = try await requestRepository(keyword: keyword, page: 1)
                 
                 await MainActor.run {
-                    withAnimation(.spring(response: 0.38, dampingFraction: 0.9)) {
-                        isProgressing = false
-                        
-                        self.keyword = keyword
-                        page = 1
-                        
-                        repositories = response.repositories
-                        totalCount   = response.totalCount
-                    }
+                    isProgressing = false
+                    
+                    self.keyword = keyword
+                    
+                    repositories = response.repositories
+                    totalCount   = response.totalCount
+                    
+                    nextPage = response.isComplete ? nil : 2
                 }
                 
             } catch {
@@ -71,7 +72,23 @@ final class SearchResultData: ObservableObject {
     }
     
     func requestNext() {
+        guard task == nil, let page = nextPage else { return }
         
+        task = Task {
+            do {
+                let response = try await requestRepository(keyword: keyword, page: page)
+            
+                await MainActor.run {
+                    task = nil
+                    
+                    repositories.append(contentsOf: response.repositories)
+                    nextPage = response.isComplete ? nil : page + 1
+                }
+                
+            } catch {
+                await MainActor.run { task = nil }
+            }
+        }
     }
     
     // MARK: Private
