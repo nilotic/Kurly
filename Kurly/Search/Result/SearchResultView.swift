@@ -27,8 +27,7 @@ struct SearchResultView: View {
         }
         .toast(message: $data.toastMessage)
         .onChange(of: searchData.submittedKeyword) {
-            guard !$0.isEmpty else { return }
-            data.request(keyword: $0)
+            data.handle(submittedKeyword: $0)
         }
     }
     

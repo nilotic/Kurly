@@ -91,6 +91,18 @@ final class SearchResultData: ObservableObject {
         }
     }
     
+    func handle(submittedKeyword: String) {
+        repositories.removeAll()
+        
+        totalCount = 0
+        nextPage   = nil
+        keyword    = ""
+        task       = nil
+        
+        guard !submittedKeyword.isEmpty else { return }
+        request(keyword: submittedKeyword)
+    }
+    
     // MARK: Private
     private func requestRepository(keyword: String, page: UInt) async throws -> SearchResponse {
         var request = await URLRequest(httpMethod: .get, url: .searchRepository)
