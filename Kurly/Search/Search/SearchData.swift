@@ -12,8 +12,6 @@ final class SearchData: ObservableObject {
     
     // MARK: - Value
     // MARK: Public
-    @Published var keyword = ""
-    
-    
-    
+    @Published var keyword          = ""
+    @Published var submittedKeyword = ""
 }

@@ -18,29 +18,26 @@ struct SearchView: View {
     // MARK: Public
     var body: some View {
         NavigationView {
-            ZStack {
-                contentsView
-            }
+            contentsView
+                .navigationTitle("Search")
         }
         .navigationViewStyle(.stack)
         .searchable(text: $data.keyword, prompt: String(localized: "search_searchbar_placeholder"))
         .onSubmit(of: .search) {
-            
+            data.submittedKeyword = data.keyword
         }
     }
     
     // MARK: Private
-    @ViewBuilder
     private var contentsView: some View {
-        switch data.keyword.isEmpty {
-        case true:
+        ZStack {
             SearchKeywordsView()
+                .opacity(data.keyword.isEmpty ? 1 : 0)
                 .environmentObject(data)
             
-        case false:
-            ZStack {
-                
-            }
+            SearchResultView()
+                .opacity(data.keyword.isEmpty ? 0 : 1)
+                .environmentObject(data)
         }
     }
 }
