@@ -20,6 +20,9 @@ struct SearchKeywordsView: View {
     var body: some View {
         contentsView
             .toast(message: $data.toastMessage)
+            .onChange(of: searchData.keyword) {
+                data.updateAutocompletes(keyword: $0)
+            }
             .onChange(of: searchData.submittedKeyword) {
                 guard !$0.isEmpty else { return }
                 data.handle(keyword: SearchKeyword(keyword: $0))
@@ -96,7 +99,7 @@ struct SearchKeywordsView: View {
     
     @ViewBuilder
     private var footerView: some View {
-        if !data.keywords.isEmpty {
+        if searchData.keyword.isEmpty, !data.keywords.isEmpty {
             ZStack(alignment: .bottomTrailing) {
                 Button {
                     data.deleteAll()
