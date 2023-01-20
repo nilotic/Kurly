@@ -13,7 +13,9 @@ final class SearchKeywordsData: ObservableObject {
     
     // MARK: - Value
     // MARK: Public
-    @Published private(set) var keywords = SearchKeyword.keywords //[SearchKeyword]()
+    @Published private(set) var keywords = [SearchKeyword]()
+    
+    @Published var toastMessage = ""
     
     // MARK: Private
     private var task: Task<Void, Never>? = nil
@@ -52,7 +54,6 @@ final class SearchKeywordsData: ObservableObject {
             
             do {
                 let result = try self.managedContext.fetch(request)
-                
                 let keywords = result.map { SearchKeyword(data: $0) }
                 
                 DispatchQueue.main.async { self.keywords = keywords }
@@ -67,11 +68,16 @@ final class SearchKeywordsData: ObservableObject {
         Task {
             var updatedKeywords = keywords
             
-            guard let index = updatedKeywords.firstIndex(where: { $0 == keyword }) else { return }
-            var searchKeyword = updatedKeywords.remove(at: index)
-            searchKeyword.date = Date()
-            
-            updatedKeywords.insert(searchKeyword, at: 0)
+            if let index = updatedKeywords.firstIndex(where: { $0 == keyword }) {
+                var searchKeyword = updatedKeywords.remove(at: index)
+                searchKeyword.date = Date()
+                
+                updatedKeywords.insert(searchKeyword, at: 0)
+                
+            } else {
+                updatedKeywords.insert(keyword, at: 0)
+                updatedKeywords = Array(updatedKeywords.prefix(10))
+            }
             
             let keywords = updatedKeywords
             
@@ -85,6 +91,7 @@ final class SearchKeywordsData: ObservableObject {
     
     func delete(keyword: SearchKeyword) {
         task?.cancel()
+        
         task = Task {
             var updatedKeywords = keywords
             
@@ -103,6 +110,7 @@ final class SearchKeywordsData: ObservableObject {
     
     func deleteAll() {
         task?.cancel()
+        
         task = Task {
             await MainActor.run {
                 withAnimation(.spring(response: 0.38, dampingFraction: 0.9)) {

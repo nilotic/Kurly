@@ -18,19 +18,34 @@ struct SearchKeywordsView: View {
     // MARK: - View
     // MARK: Public
     var body: some View {
-        VStack(spacing: 0) {
-            headerView
-        
-            switch data.keywords.isEmpty {
-            case false:     keywordsView
-            case true:      emptyView
+        contentsView
+            .toast(message: $data.toastMessage)
+            .onChange(of: searchData.submittedKeyword) {
+                guard !$0.isEmpty else { return }
+                data.handle(keyword: SearchKeyword(keyword: $0))
             }
-        
-            footerView
-        }
+            .onAppear {
+                data.request()
+            }
     }
     
     // MARK: Private
+    @ViewBuilder
+    private var contentsView: some View {
+        switch data.keywords.isEmpty {
+        case false:
+            LazyVStack(spacing: 0) {
+                headerView
+                keywordsView
+                footerView
+            }
+            .frame(maxHeight: .infinity, alignment: .top)
+            
+        case true:
+            emptyView
+        }
+    }
+    
     private var headerView: some View {
         Text("search_recently_searched_keyword")
             .font(.system(size: 14, weight: .bold))
@@ -45,7 +60,8 @@ struct SearchKeywordsView: View {
             VStack(spacing: 0) {
                 ForEach(data.keywords) { keyword in
                     SearchKeywordView(data: keyword) {
-                        data.handle(keyword: keyword)
+                        searchData.keyword          = keyword.keyword
+                        searchData.submittedKeyword = keyword.keyword
                         
                     } removeAction: {
                         data.delete(keyword: keyword)
@@ -53,7 +69,7 @@ struct SearchKeywordsView: View {
                 }
             }
         }
-        .frame(height: min(CGFloat(data.keywords.count) * 48, 480))
+        .frame(minHeight: 48, maxHeight: 480)
     }
     
     private var emptyView: some View {
