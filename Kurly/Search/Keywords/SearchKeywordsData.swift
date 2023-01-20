@@ -18,6 +18,7 @@ final class SearchKeywordsData: ObservableObject {
     @Published var toastMessage = ""
     
     // MARK: Private
+    private var originalKeywords = [SearchKeyword]()
     private var task: Task<Void, Never>? = nil
     
     private lazy var storeContainer: NSPersistentContainer = {
@@ -56,7 +57,10 @@ final class SearchKeywordsData: ObservableObject {
                 let result = try self.managedContext.fetch(request)
                 let keywords = result.map { SearchKeyword(data: $0) }
                 
-                DispatchQueue.main.async { self.keywords = keywords }
+                DispatchQueue.main.async {
+                    self.originalKeywords = keywords
+                    self.keywords         = keywords
+                }
                 
             } catch {
                 log(.error, error.localizedDescription)
@@ -64,9 +68,21 @@ final class SearchKeywordsData: ObservableObject {
         }
     }
     
+    func updateAutocompletes(keyword: String) {
+        Task {
+            guard !keyword.isEmpty else {
+                await MainActor.run { keywords = originalKeywords }
+                return
+            }
+        
+            let filtered = originalKeywords.filter { $0.keyword.contains(keyword) }
+            await MainActor.run { keywords = filtered }
+        }
+    }
+    
     func handle(keyword: SearchKeyword) {
         Task {
-            var updatedKeywords = keywords
+            var updatedKeywords = originalKeywords
             
             if let index = updatedKeywords.firstIndex(where: { $0 == keyword }) {
                 var searchKeyword = updatedKeywords.remove(at: index)
@@ -82,10 +98,11 @@ final class SearchKeywordsData: ObservableObject {
             let keywords = updatedKeywords
             
             await MainActor.run {
-                withAnimation(.spring(response: 0.38, dampingFraction: 0.9)) {
-                    self.keywords = keywords
-                }
+                self.originalKeywords = keywords
+                self.keywords         = keywords
             }
+            
+            save(keywords: keywords)
         }
     }
     
@@ -101,6 +118,8 @@ final class SearchKeywordsData: ObservableObject {
             let keywords = updatedKeywords
             
             await MainActor.run {
+                self.originalKeywords = keywords
+                
                 withAnimation(.spring(response: 0.38, dampingFraction: 0.9)) {
                     self.keywords = keywords
                 }
@@ -113,10 +132,38 @@ final class SearchKeywordsData: ObservableObject {
         
         task = Task {
             await MainActor.run {
+                self.originalKeywords = []
+                
                 withAnimation(.spring(response: 0.38, dampingFraction: 0.9)) {
                     self.keywords = []
                 }
             }
+        }
+    }
+    
+    // MARK: Private
+    private func save(keywords: [SearchKeyword]) {
+        do {
+            // Delete All
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: SearchKeywordEntity.fetchRequest())
+            try managedContext.execute(deleteRequest)
+
+            
+            // Update
+            for keyword in keywords {
+                let entity = SearchKeywordEntity(context: managedContext)
+                entity.keyword = keyword.keyword
+                entity.date    = keyword.date
+            }
+            
+            guard managedContext.hasChanges else { return }
+            try managedContext.save()
+            
+            guard storeContainer.viewContext.hasChanges else { return }
+            try storeContainer.viewContext.save()
+            
+        } catch {
+            log(.error, error.localizedDescription)
         }
     }
 }
