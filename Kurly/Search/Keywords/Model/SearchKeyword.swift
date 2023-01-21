@@ -18,6 +18,11 @@ extension SearchKeyword {
         keyword = data.keyword ?? ""
         date    = data.date ?? Date()
     }
+    
+    init(keyword: String) {
+        self.keyword = keyword
+        date = Date()
+    }
 }
 
 extension SearchKeyword {

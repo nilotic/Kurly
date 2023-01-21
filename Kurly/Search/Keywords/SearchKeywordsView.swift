@@ -14,23 +14,47 @@ struct SearchKeywordsView: View {
     @StateObject private var data = SearchKeywordsData()
     @EnvironmentObject private var searchData: SearchData
     
+    @Environment(\.isSearching) var isSearching
+    
     
     // MARK: - View
     // MARK: Public
     var body: some View {
-        VStack(spacing: 0) {
-            headerView
-        
-            switch data.keywords.isEmpty {
-            case false:     keywordsView
-            case true:      emptyView
+        ZStack {
+            contentsView
+            
+            if data.isProgressing {
+                ProgressView()
             }
-        
-            footerView
+        }
+        .opacity(searchData.keyword.isEmpty ? (isSearching ? 0 : 1) : 0)
+        .toast(message: $data.toastMessage)
+        .onChange(of: searchData.submittedKeyword) {
+            guard !$0.isEmpty else { return }
+            data.handle(keyword: SearchKeyword(keyword: $0))
+        }
+        .onAppear {
+            data.request()
         }
     }
     
     // MARK: Private
+    @ViewBuilder
+    private var contentsView: some View {
+        switch data.keywords.isEmpty {
+        case false:
+            LazyVStack(spacing: 0) {
+                headerView
+                keywordsView
+                footerView
+            }
+            .frame(maxHeight: .infinity, alignment: .top)
+            
+        case true:
+            emptyView
+        }
+    }
+    
     private var headerView: some View {
         Text("search_recently_searched_keyword")
             .font(.system(size: 14, weight: .bold))
@@ -45,7 +69,8 @@ struct SearchKeywordsView: View {
             VStack(spacing: 0) {
                 ForEach(data.keywords) { keyword in
                     SearchKeywordView(data: keyword) {
-                        data.handle(keyword: keyword)
+                        searchData.keyword          = keyword.keyword
+                        searchData.submittedKeyword = keyword.keyword
                         
                     } removeAction: {
                         data.delete(keyword: keyword)
@@ -53,7 +78,7 @@ struct SearchKeywordsView: View {
                 }
             }
         }
-        .frame(height: min(CGFloat(data.keywords.count) * 48, 480))
+        .frame(minHeight: 48, maxHeight: 480)
     }
     
     private var emptyView: some View {
@@ -80,7 +105,7 @@ struct SearchKeywordsView: View {
     
     @ViewBuilder
     private var footerView: some View {
-        if !data.keywords.isEmpty {
+        if searchData.keyword.isEmpty, !data.keywords.isEmpty {
             ZStack(alignment: .bottomTrailing) {
                 Button {
                     data.deleteAll()
@@ -109,15 +134,13 @@ struct SearchKeywordsView_Previews: PreviewProvider {
         let view = SearchKeywordsView()
             .environmentObject(SearchData())
         
-        Group {
-            view
-                .previewDevice("iPhone 8")
-                .preferredColorScheme(.light)
-            
-            view
-                .previewDevice("iPhone 11 Pro")
-                .preferredColorScheme(.dark)
-        }
+        view
+            .previewDevice("iPhone 8")
+            .preferredColorScheme(.light)
+        
+        view
+            .previewDevice("iPhone 11 Pro")
+            .preferredColorScheme(.dark)
     }
 }
 #endif

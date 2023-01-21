@@ -14,6 +14,8 @@ struct SearchResultView: View {
     @StateObject private var data = SearchResultData()
     @EnvironmentObject private var searchData: SearchData
     
+    @Environment(\.isSearching) var isSearching
+    
     
     // MARK: - View
     // MARK: Public
@@ -25,7 +27,22 @@ struct SearchResultView: View {
                 ProgressView()
             }
         }
+        .opacity(searchData.submittedKeyword.isEmpty ? 0 : (searchData.keyword == searchData.submittedKeyword ? 1 : 0))
         .toast(message: $data.toastMessage)
+        .onChange(of: searchData.keyword) {
+            guard isSearching, $0.isEmpty else { return }
+            searchData.submittedKeyword = ""
+        }
+        .onChange(of: isSearching) {
+            switch $0 {
+            case true:
+                guard searchData.keyword.isEmpty else { return }
+                searchData.submittedKeyword = ""
+                
+            case false:
+                searchData.submittedKeyword = ""
+            }
+        }
         .onChange(of: searchData.submittedKeyword) {
             data.handle(submittedKeyword: $0)
         }
