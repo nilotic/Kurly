@@ -14,22 +14,28 @@ struct SearchKeywordsView: View {
     @StateObject private var data = SearchKeywordsData()
     @EnvironmentObject private var searchData: SearchData
     
+    @Environment(\.isSearching) var isSearching
+    
     
     // MARK: - View
     // MARK: Public
     var body: some View {
-        contentsView
-            .toast(message: $data.toastMessage)
-            .onChange(of: searchData.keyword) {
-                data.updateAutocompletes(keyword: $0)
+        ZStack {
+            contentsView
+            
+            if data.isProgressing {
+                ProgressView()
             }
-            .onChange(of: searchData.submittedKeyword) {
-                guard !$0.isEmpty else { return }
-                data.handle(keyword: SearchKeyword(keyword: $0))
-            }
-            .onAppear {
-                data.request()
-            }
+        }
+        .opacity(searchData.keyword.isEmpty ? (isSearching ? 0 : 1) : 0)
+        .toast(message: $data.toastMessage)
+        .onChange(of: searchData.submittedKeyword) {
+            guard !$0.isEmpty else { return }
+            data.handle(keyword: SearchKeyword(keyword: $0))
+        }
+        .onAppear {
+            data.request()
+        }
     }
     
     // MARK: Private
@@ -128,15 +134,13 @@ struct SearchKeywordsView_Previews: PreviewProvider {
         let view = SearchKeywordsView()
             .environmentObject(SearchData())
         
-        Group {
-            view
-                .previewDevice("iPhone 8")
-                .preferredColorScheme(.light)
-            
-            view
-                .previewDevice("iPhone 11 Pro")
-                .preferredColorScheme(.dark)
-        }
+        view
+            .previewDevice("iPhone 8")
+            .preferredColorScheme(.light)
+        
+        view
+            .previewDevice("iPhone 11 Pro")
+            .preferredColorScheme(.dark)
     }
 }
 #endif

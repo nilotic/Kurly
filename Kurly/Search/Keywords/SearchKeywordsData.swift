@@ -7,13 +7,13 @@
 
 import SwiftUI
 import Combine
-import CoreData
 
 final class SearchKeywordsData: ObservableObject {
     
     // MARK: - Value
     // MARK: Public
     @Published private(set) var keywords = [SearchKeyword]()
+    @Published private(set) var isProgressing = false
     
     @Published var toastMessage = ""
     
@@ -21,62 +21,29 @@ final class SearchKeywordsData: ObservableObject {
     private var originalKeywords = [SearchKeyword]()
     private var task: Task<Void, Never>? = nil
     
-    private lazy var storeContainer: NSPersistentContainer = {
-        let persistentContainer = NSPersistentContainer(name: "SearchKeywords")
-        
-        #if UNITTEST
-        let persistentStoreDescription  = NSPersistentStoreDescription()
-        persistentStoreDescription.type = NSInMemoryStoreType
-        persistentContainer.persistentStoreDescriptions = [persistentStoreDescription]
-        #endif
-        
-        return persistentContainer
-    }()
-    
-    private lazy var managedContext: NSManagedObjectContext = {
-        let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-        context.parent      = storeContainer.viewContext
-        context.mergePolicy = NSMergePolicy(merge: .mergeByPropertyStoreTrumpMergePolicyType)
-        return context
-    }()
-    
     
     // MARK: - Function
     // MARK: Public
     func request() {
-        storeContainer.loadPersistentStores { description, error in
-            guard error == nil else {
-                log(.error, error?.localizedDescription ?? "Failed to load persistence stores")
-                return
-            }
-            
-            let request = SearchKeywordEntity.fetchRequest()
-            request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
+        Task {
+            await MainActor.run { isProgressing = true }
             
             do {
-                let result = try self.managedContext.fetch(request)
-                let keywords = result.map { SearchKeyword(data: $0) }
+                let keywords = try await SearchCoreDataManager.shared.requestKeywords()
                 
-                DispatchQueue.main.async {
-                    self.originalKeywords = keywords
-                    self.keywords         = keywords
+                await MainActor.run {
+                    isProgressing = false
+                    
+                    originalKeywords = keywords
+                    self.keywords    = keywords
                 }
                 
             } catch {
-                log(.error, error.localizedDescription)
+                await MainActor.run {
+                    isProgressing = false
+                    toastMessage = error.localizedDescription
+                }
             }
-        }
-    }
-    
-    func updateAutocompletes(keyword: String) {
-        Task {
-            guard !keyword.isEmpty else {
-                await MainActor.run { keywords = originalKeywords }
-                return
-            }
-        
-            let filtered = originalKeywords.filter { $0.keyword.contains(keyword) }
-            await MainActor.run { keywords = filtered }
         }
     }
     
@@ -96,13 +63,12 @@ final class SearchKeywordsData: ObservableObject {
             }
             
             let keywords = updatedKeywords
+            SearchCoreDataManager.shared.save(keywords: keywords)
             
             await MainActor.run {
                 self.originalKeywords = keywords
                 self.keywords         = keywords
             }
-            
-            save(keywords: keywords)
         }
     }
     
@@ -138,32 +104,6 @@ final class SearchKeywordsData: ObservableObject {
                     self.keywords = []
                 }
             }
-        }
-    }
-    
-    // MARK: Private
-    private func save(keywords: [SearchKeyword]) {
-        do {
-            // Delete All
-            let deleteRequest = NSBatchDeleteRequest(fetchRequest: SearchKeywordEntity.fetchRequest())
-            try managedContext.execute(deleteRequest)
-
-            
-            // Update
-            for keyword in keywords {
-                let entity = SearchKeywordEntity(context: managedContext)
-                entity.keyword = keyword.keyword
-                entity.date    = keyword.date
-            }
-            
-            guard managedContext.hasChanges else { return }
-            try managedContext.save()
-            
-            guard storeContainer.viewContext.hasChanges else { return }
-            try storeContainer.viewContext.save()
-            
-        } catch {
-            log(.error, error.localizedDescription)
         }
     }
 }
