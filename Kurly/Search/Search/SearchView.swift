@@ -22,7 +22,9 @@ struct SearchView: View {
                 .navigationTitle("Search")
         }
         .navigationViewStyle(.stack)
-        .searchable(text: $data.keyword, prompt: String(localized: "search_searchbar_placeholder"))
+        .searchable(text: $data.keyword, placement: .navigationBarDrawer(displayMode: .always), prompt: String(localized: "search_searchbar_placeholder"))
+        .autocapitalization(.none)
+        .disableAutocorrection(true)
         .onSubmit(of: .search) {
             data.submittedKeyword = data.keyword
         }
