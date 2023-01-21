@@ -19,12 +19,13 @@ struct SearchKeywordView: View {
     // MARK: - Value
     // MARK: Public
     var body: some View {
-        HStack(spacing: 0) {
+        HStack(spacing: 10) {
             keywordView
             removeButton
         }
         .frame(height: 48)
         .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color("neutral10"))
         .onTapGesture {
             action?()
         }
@@ -34,7 +35,7 @@ struct SearchKeywordView: View {
     private var keywordView: some View {
         Text(data.keyword)
             .font(.system(size: 18))
-            .foregroundColor(Color("neutral2"))
+            .foregroundColor(Color("neutral1"))
             .padding(.leading, 20)
     }
     

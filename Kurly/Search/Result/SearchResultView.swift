@@ -27,6 +27,7 @@ struct SearchResultView: View {
                 ProgressView()
             }
         }
+        .opacity(searchData.submittedKeyword.isEmpty ? 0 : (searchData.keyword == searchData.submittedKeyword ? 1 : 0))
         .toast(message: $data.toastMessage)
         .onChange(of: searchData.keyword) {
             guard isSearching, $0.isEmpty else { return }
