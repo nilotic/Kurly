@@ -127,7 +127,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B7024537297BC1E10058EFB3 /* Autocomplete */ = {
+		B7024537297BC1E10058EFB3 /* Autocompletes */ = {
 			isa = PBXGroup;
 			children = (
 				B702453A297BC2060058EFB3 /* SearchAutoCompletesView.swift */,
@@ -135,7 +135,7 @@
 				B77157AC297B76DD003F6A5D /* View */,
 				B77157A9297B76CF003F6A5D /* Model */,
 			);
-			path = Autocomplete;
+			path = Autocompletes;
 			sourceTree = "<group>";
 		};
 		B70D6FB82977807B00D3F45D /* Search */ = {
@@ -143,7 +143,7 @@
 			children = (
 				B72FBA0F2978E5B200AAA960 /* Search */,
 				B72FBA0A2978E55500AAA960 /* Keywords */,
-				B7024537297BC1E10058EFB3 /* Autocomplete */,
+				B7024537297BC1E10058EFB3 /* Autocompletes */,
 				B7BC3F47297900650071DB71 /* Result */,
 				B77157A6297B6FC4003F6A5D /* CoreData */,
 			);
