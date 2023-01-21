@@ -15,8 +15,6 @@ final class SearchCoreDataManager: ObservableObject {
     
     
     // MARK: - Value
-    // MARK: Public
-    
     // MARK: Private
     private lazy var storeContainer: NSPersistentContainer = {
         let persistentContainer = NSPersistentContainer(name: "Search")
