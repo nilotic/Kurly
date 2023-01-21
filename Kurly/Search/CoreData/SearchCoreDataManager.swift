@@ -68,7 +68,7 @@ final class SearchCoreDataManager: ObservableObject {
     
     func requestAutocompletes(keyword: String) throws -> [SearchAutocomplete] {
         let request: NSFetchRequest<SearchKeywordEntity> = SearchKeywordEntity.fetchRequest()
-        request.predicate = NSPredicate(format: "%K CONTAINS %@", #keyPath(SearchKeywordEntity.keyword), keyword)
+        request.predicate = NSPredicate(format: "%K CONTAINS[c] %@", #keyPath(SearchKeywordEntity.keyword), keyword)
         
         let result = try managedContext.fetch(request)
         return result.map { SearchAutocomplete(data: $0) }
