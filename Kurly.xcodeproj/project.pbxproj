@@ -23,13 +23,11 @@
 		B7141EF2297EA45100D90783 /* GitHubRepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC3F50297900650071DB71 /* GitHubRepositoryView.swift */; };
 		B7141EF3297EA45100D90783 /* GitHubRepositoryProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71E985E297A4F9500844AE6 /* GitHubRepositoryProgressView.swift */; };
 		B7141EF4297EA46500D90783 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC3F59297900DA0071DB71 /* ImageView.swift */; };
-		B7141EF5297EA46900D90783 /* FramePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E1CA92978FD1600A94AEA /* FramePreferenceKey.swift */; };
 		B7141EF6297EA46D00D90783 /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E1CAB2978FD1600A94AEA /* ToastModifier.swift */; };
 		B7141EF7297EA47100D90783 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E1CAD2978FD1600A94AEA /* ViewExtension.swift */; };
 		B7141EF8297EA49E00D90783 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78603882976C6FC000F611F /* Assets.xcassets */; };
 		B71E985F297A4F9500844AE6 /* GitHubRepositoryProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71E985E297A4F9500844AE6 /* GitHubRepositoryProgressView.swift */; };
 		B72FBA0C2978E57E00AAA960 /* SearchKeywordsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FBA0B2978E57E00AAA960 /* SearchKeywordsData.swift */; };
-		B76E1CAE2978FD1600A94AEA /* FramePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E1CA92978FD1600A94AEA /* FramePreferenceKey.swift */; };
 		B76E1CAF2978FD1600A94AEA /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E1CAB2978FD1600A94AEA /* ToastModifier.swift */; };
 		B76E1CB02978FD1600A94AEA /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E1CAD2978FD1600A94AEA /* ViewExtension.swift */; };
 		B76E1CB52978FD2700A94AEA /* LocaleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E1CB22978FD2700A94AEA /* LocaleManager.swift */; };
@@ -133,7 +131,6 @@
 		B7E80C76297C0FC5008A129D /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E1CAB2978FD1600A94AEA /* ToastModifier.swift */; };
 		B7E80C77297C0FC5008A129D /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E1CAD2978FD1600A94AEA /* ViewExtension.swift */; };
 		B7E80C78297C0FC5008A129D /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC3F59297900DA0071DB71 /* ImageView.swift */; };
-		B7E80C79297C0FC5008A129D /* FramePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E1CA92978FD1600A94AEA /* FramePreferenceKey.swift */; };
 		B7E80C7A297C0FDC008A129D /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79CF94029777D0B00284B6D /* UserDefaultsKey.swift */; };
 		B7E80C7B297C0FDC008A129D /* VersionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79CF93D29777C4800284B6D /* VersionManager.swift */; };
 		B7E80C7C297C0FDC008A129D /* ServiceURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79CF94529777DE500284B6D /* ServiceURL.swift */; };
@@ -186,7 +183,6 @@
 		B70D6FBA2977807B00D3F45D /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		B71E985E297A4F9500844AE6 /* GitHubRepositoryProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepositoryProgressView.swift; sourceTree = "<group>"; };
 		B72FBA0B2978E57E00AAA960 /* SearchKeywordsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchKeywordsData.swift; sourceTree = "<group>"; };
-		B76E1CA92978FD1600A94AEA /* FramePreferenceKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FramePreferenceKey.swift; sourceTree = "<group>"; };
 		B76E1CAB2978FD1600A94AEA /* ToastModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
 		B76E1CAD2978FD1600A94AEA /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		B76E1CB22978FD2700A94AEA /* LocaleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocaleManager.swift; sourceTree = "<group>"; };
@@ -327,19 +323,10 @@
 			isa = PBXGroup;
 			children = (
 				B7BC3F58297900C30071DB71 /* Image */,
-				B76E1CA82978FD1600A94AEA /* PreferenceKey */,
 				B76E1CAA2978FD1600A94AEA /* Toast */,
 				B76E1CAC2978FD1600A94AEA /* View */,
 			);
 			path = Component;
-			sourceTree = "<group>";
-		};
-		B76E1CA82978FD1600A94AEA /* PreferenceKey */ = {
-			isa = PBXGroup;
-			children = (
-				B76E1CA92978FD1600A94AEA /* FramePreferenceKey.swift */,
-			);
-			path = PreferenceKey;
 			sourceTree = "<group>";
 		};
 		B76E1CAA2978FD1600A94AEA /* Toast */ = {
@@ -733,7 +720,6 @@
 				B79CF95A29777DE500284B6D /* HTTPStatusCode.swift in Sources */,
 				B79CF95429777DE500284B6D /* Response.swift in Sources */,
 				B79CF95729777DE500284B6D /* HTTPHeaderValue.swift in Sources */,
-				B76E1CAE2978FD1600A94AEA /* FramePreferenceKey.swift in Sources */,
 				B70D6FBC2977807B00D3F45D /* SearchView.swift in Sources */,
 				B7BC3F54297900660071DB71 /* GitHubRepository.swift in Sources */,
 				B7DB563D2977A972001FD8FE /* SearchKeyword.swift in Sources */,
@@ -798,7 +784,6 @@
 				B7E80C49297C0574008A129D /* SearchAutocomplete.swift in Sources */,
 				B7E80C4C297C057E008A129D /* GitHubRepositoryOwner.swift in Sources */,
 				B7141EF7297EA47100D90783 /* ViewExtension.swift in Sources */,
-				B7141EF5297EA46900D90783 /* FramePreferenceKey.swift in Sources */,
 				B7141EF6297EA46D00D90783 /* ToastModifier.swift in Sources */,
 				B7E80C46297C056A008A129D /* SearchKeywordsData.swift in Sources */,
 				B7E80C3B297C0546008A129D /* Host.swift in Sources */,
@@ -843,7 +828,6 @@
 				B7E80C75297C0F94008A129D /* GitHubRepositoryProgressView.swift in Sources */,
 				B7E80C6C297C0F74008A129D /* SearchResultData.swift in Sources */,
 				B7E80C62297C0F43008A129D /* SearchView.swift in Sources */,
-				B7E80C79297C0FC5008A129D /* FramePreferenceKey.swift in Sources */,
 				B7E80C67297C0F58008A129D /* SearchKeywordView.swift in Sources */,
 				B7E80C8B297C0FE3008A129D /* ImageManager.swift in Sources */,
 				B7E80C6F297C0F83008A129D /* Search.xcdatamodeld in Sources */,
