@@ -13,6 +13,20 @@
 		B702453B297BC2060058EFB3 /* SearchAutoCompletesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B702453A297BC2060058EFB3 /* SearchAutoCompletesView.swift */; };
 		B70D6FBB2977807B00D3F45D /* SearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70D6FB92977807B00D3F45D /* SearchData.swift */; };
 		B70D6FBC2977807B00D3F45D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70D6FBA2977807B00D3F45D /* SearchView.swift */; };
+		B7141EEB297EA42000D90783 /* KurlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78603842976C6FA000F611F /* KurlyApp.swift */; };
+		B7141EEC297EA42400D90783 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70D6FBA2977807B00D3F45D /* SearchView.swift */; };
+		B7141EED297EA42900D90783 /* SearchKeywordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E38B3D297817F000A9C791 /* SearchKeywordsView.swift */; };
+		B7141EEE297EA42F00D90783 /* SearchKeywordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E38B3F297819FE00A9C791 /* SearchKeywordView.swift */; };
+		B7141EEF297EA43900D90783 /* SearchAutoCompletesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B702453A297BC2060058EFB3 /* SearchAutoCompletesView.swift */; };
+		B7141EF0297EA43E00D90783 /* SearchAutocompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77157AD297B76E8003F6A5D /* SearchAutocompleteView.swift */; };
+		B7141EF1297EA44900D90783 /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC3F49297900650071DB71 /* SearchResultView.swift */; };
+		B7141EF2297EA45100D90783 /* GitHubRepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC3F50297900650071DB71 /* GitHubRepositoryView.swift */; };
+		B7141EF3297EA45100D90783 /* GitHubRepositoryProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71E985E297A4F9500844AE6 /* GitHubRepositoryProgressView.swift */; };
+		B7141EF4297EA46500D90783 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC3F59297900DA0071DB71 /* ImageView.swift */; };
+		B7141EF5297EA46900D90783 /* FramePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E1CA92978FD1600A94AEA /* FramePreferenceKey.swift */; };
+		B7141EF6297EA46D00D90783 /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E1CAB2978FD1600A94AEA /* ToastModifier.swift */; };
+		B7141EF7297EA47100D90783 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E1CAD2978FD1600A94AEA /* ViewExtension.swift */; };
+		B7141EF8297EA49E00D90783 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78603882976C6FC000F611F /* Assets.xcassets */; };
 		B71E985F297A4F9500844AE6 /* GitHubRepositoryProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71E985E297A4F9500844AE6 /* GitHubRepositoryProgressView.swift */; };
 		B72FBA0C2978E57E00AAA960 /* SearchKeywordsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FBA0B2978E57E00AAA960 /* SearchKeywordsData.swift */; };
 		B76E1CAE2978FD1600A94AEA /* FramePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E1CA92978FD1600A94AEA /* FramePreferenceKey.swift */; };
@@ -92,10 +106,69 @@
 		B7E80C4D297C057E008A129D /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC3F4D297900650071DB71 /* SearchResponse.swift */; };
 		B7E80C4E297C0586008A129D /* SearchCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77157A7297B6FD6003F6A5D /* SearchCoreDataManager.swift */; };
 		B7E80C4F297C0589008A129D /* Search.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B77157B7297B7E7E003F6A5D /* Search.xcdatamodeld */; };
+		B7E80C57297C0F32008A129D /* KurlyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E80C56297C0F32008A129D /* KurlyUITests.swift */; };
+		B7E80C59297C0F32008A129D /* KurlyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E80C58297C0F32008A129D /* KurlyUITestsLaunchTests.swift */; };
+		B7E80C60297C0F3C008A129D /* KurlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78603842976C6FA000F611F /* KurlyApp.swift */; };
+		B7E80C61297C0F43008A129D /* SearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70D6FB92977807B00D3F45D /* SearchData.swift */; };
+		B7E80C62297C0F43008A129D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70D6FBA2977807B00D3F45D /* SearchView.swift */; };
+		B7E80C63297C0F4B008A129D /* SearchKeywordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E38B3D297817F000A9C791 /* SearchKeywordsView.swift */; };
+		B7E80C64297C0F4B008A129D /* SearchKeywordsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FBA0B2978E57E00AAA960 /* SearchKeywordsData.swift */; };
+		B7E80C65297C0F51008A129D /* SearchAutoCompletesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B702453A297BC2060058EFB3 /* SearchAutoCompletesView.swift */; };
+		B7E80C66297C0F51008A129D /* SearchAutoCompletesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7024538297BC2010058EFB3 /* SearchAutoCompletesData.swift */; };
+		B7E80C67297C0F58008A129D /* SearchKeywordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E38B3F297819FE00A9C791 /* SearchKeywordView.swift */; };
+		B7E80C68297C0F5B008A129D /* SearchKeyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DB563C2977A972001FD8FE /* SearchKeyword.swift */; };
+		B7E80C69297C0F68008A129D /* SearchAutocompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77157AD297B76E8003F6A5D /* SearchAutocompleteView.swift */; };
+		B7E80C6A297C0F6B008A129D /* SearchAutocomplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77157AA297B76DB003F6A5D /* SearchAutocomplete.swift */; };
+		B7E80C6B297C0F74008A129D /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC3F49297900650071DB71 /* SearchResultView.swift */; };
+		B7E80C6C297C0F74008A129D /* SearchResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC3F48297900650071DB71 /* SearchResultData.swift */; };
+		B7E80C6D297C0F7B008A129D /* SearchResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC3F48297900650071DB71 /* SearchResultData.swift */; };
+		B7E80C6E297C0F81008A129D /* SearchCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77157A7297B6FD6003F6A5D /* SearchCoreDataManager.swift */; };
+		B7E80C6F297C0F83008A129D /* Search.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B77157B7297B7E7E003F6A5D /* Search.xcdatamodeld */; };
+		B7E80C70297C0F8E008A129D /* GitHubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC3F4C297900650071DB71 /* GitHubRepository.swift */; };
+		B7E80C71297C0F8E008A129D /* GitHubRepositoryOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC3F4E297900650071DB71 /* GitHubRepositoryOwner.swift */; };
+		B7E80C72297C0F8E008A129D /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC3F4D297900650071DB71 /* SearchResponse.swift */; };
+		B7E80C73297C0F8E008A129D /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC3F4B297900650071DB71 /* SearchRequest.swift */; };
+		B7E80C74297C0F94008A129D /* GitHubRepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC3F50297900650071DB71 /* GitHubRepositoryView.swift */; };
+		B7E80C75297C0F94008A129D /* GitHubRepositoryProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71E985E297A4F9500844AE6 /* GitHubRepositoryProgressView.swift */; };
+		B7E80C76297C0FC5008A129D /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E1CAB2978FD1600A94AEA /* ToastModifier.swift */; };
+		B7E80C77297C0FC5008A129D /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E1CAD2978FD1600A94AEA /* ViewExtension.swift */; };
+		B7E80C78297C0FC5008A129D /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC3F59297900DA0071DB71 /* ImageView.swift */; };
+		B7E80C79297C0FC5008A129D /* FramePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E1CA92978FD1600A94AEA /* FramePreferenceKey.swift */; };
+		B7E80C7A297C0FDC008A129D /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79CF94029777D0B00284B6D /* UserDefaultsKey.swift */; };
+		B7E80C7B297C0FDC008A129D /* VersionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79CF93D29777C4800284B6D /* VersionManager.swift */; };
+		B7E80C7C297C0FDC008A129D /* ServiceURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79CF94529777DE500284B6D /* ServiceURL.swift */; };
+		B7E80C7D297C0FDC008A129D /* HTTPHeaderField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79CF94629777DE500284B6D /* HTTPHeaderField.swift */; };
+		B7E80C7E297C0FDC008A129D /* Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79CF94F29777DE500284B6D /* Host.swift */; };
+		B7E80C7F297C0FDC008A129D /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79CF94829777DE500284B6D /* Response.swift */; };
+		B7E80C80297C0FDC008A129D /* KurlyServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79CF94A29777DE500284B6D /* KurlyServer.swift */; };
+		B7E80C81297C0FDC008A129D /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79CF94E29777DE500284B6D /* HTTPStatusCode.swift */; };
+		B7E80C82297C0FDC008A129D /* URLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79CF94D29777DE500284B6D /* URLRequestExtension.swift */; };
+		B7E80C83297C0FDC008A129D /* HTTPHeaderApplicationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AE20AA2977B13100BCACF8 /* HTTPHeaderApplicationType.swift */; };
+		B7E80C84297C0FDC008A129D /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79CF94929777DE500284B6D /* ServiceError.swift */; };
+		B7E80C85297C0FDC008A129D /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79CF94729777DE500284B6D /* HTTPMethod.swift */; };
+		B7E80C86297C0FDC008A129D /* HTTPHeaderValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79CF94B29777DE500284B6D /* HTTPHeaderValue.swift */; };
+		B7E80C87297C0FDC008A129D /* MultipartType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79CF94C29777DE500284B6D /* MultipartType.swift */; };
+		B7E80C88297C0FE3008A129D /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7007C582976C973000B874A /* Logger.swift */; };
+		B7E80C89297C0FE3008A129D /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77157B0297B77B3003F6A5D /* DateExtension.swift */; };
+		B7E80C8A297C0FE3008A129D /* LocaleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E1CB22978FD2700A94AEA /* LocaleManager.swift */; };
+		B7E80C8B297C0FE3008A129D /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E1CB42978FD2700A94AEA /* ImageManager.swift */; };
+		B7E80C8C297C0FE3008A129D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79CF94329777DE500284B6D /* NetworkManager.swift */; };
+		B7E80C8D297C0FE3008A129D /* LogType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7007C572976C973000B874A /* LogType.swift */; };
+		B7E80C8E297C0FE3008A129D /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77157B2297B77CF003F6A5D /* DateFormat.swift */; };
+		B7E80C8F297C0FEE008A129D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78603882976C6FC000F611F /* Assets.xcassets */; };
+		B7E80C90297C0FF4008A129D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B7AE20B72977BBC300BCACF8 /* Localizable.strings */; };
+		B7E80C91297C0FF4008A129D /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = B7AE20BA2977BBC600BCACF8 /* Localizable.stringsdict */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		B7E80C29297C02E2008A129D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B78603792976C6FA000F611F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B78603802976C6FA000F611F;
+			remoteInfo = Kurly;
+		};
+		B7E80C5A297C0F32008A129D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B78603792976C6FA000F611F /* Project object */;
 			proxyType = 1;
@@ -161,6 +234,9 @@
 		B7E38B3F297819FE00A9C791 /* SearchKeywordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchKeywordView.swift; sourceTree = "<group>"; };
 		B7E80C25297C02E2008A129D /* KurlyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KurlyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7E80C27297C02E2008A129D /* KurlyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KurlyTests.swift; sourceTree = "<group>"; };
+		B7E80C54297C0F32008A129D /* KurlyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KurlyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7E80C56297C0F32008A129D /* KurlyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KurlyUITests.swift; sourceTree = "<group>"; };
+		B7E80C58297C0F32008A129D /* KurlyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KurlyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +248,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B7E80C22297C02E2008A129D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7E80C51297C0F32008A129D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -330,6 +413,7 @@
 			children = (
 				B78603832976C6FA000F611F /* Kurly */,
 				B7E80C26297C02E2008A129D /* KurlyTests */,
+				B7E80C55297C0F32008A129D /* KurlyUITests */,
 				B78603822976C6FA000F611F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -339,6 +423,7 @@
 			children = (
 				B78603812976C6FA000F611F /* Kurly.app */,
 				B7E80C25297C02E2008A129D /* KurlyTests.xctest */,
+				B7E80C54297C0F32008A129D /* KurlyUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -346,12 +431,12 @@
 		B78603832976C6FA000F611F /* Kurly */ = {
 			isa = PBXGroup;
 			children = (
-				B7B1A319297970CE000A196C /* Info.plist */,
 				B78603842976C6FA000F611F /* KurlyApp.swift */,
 				B70D6FB82977807B00D3F45D /* Search */,
 				B76E1CA72978FD1600A94AEA /* Component */,
 				B78603922976C73A000F611F /* Util */,
 				B78603882976C6FC000F611F /* Assets.xcassets */,
+				B7B1A319297970CE000A196C /* Info.plist */,
 				B7AE20B72977BBC300BCACF8 /* Localizable.strings */,
 				B7AE20BA2977BBC600BCACF8 /* Localizable.stringsdict */,
 				B786038A2976C6FC000F611F /* Preview Content */,
@@ -482,6 +567,15 @@
 			path = KurlyTests;
 			sourceTree = "<group>";
 		};
+		B7E80C55297C0F32008A129D /* KurlyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B7E80C56297C0F32008A129D /* KurlyUITests.swift */,
+				B7E80C58297C0F32008A129D /* KurlyUITestsLaunchTests.swift */,
+			);
+			path = KurlyUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -520,6 +614,24 @@
 			productReference = B7E80C25297C02E2008A129D /* KurlyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		B7E80C53297C0F32008A129D /* KurlyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7E80C5C297C0F33008A129D /* Build configuration list for PBXNativeTarget "KurlyUITests" */;
+			buildPhases = (
+				B7E80C50297C0F32008A129D /* Sources */,
+				B7E80C51297C0F32008A129D /* Frameworks */,
+				B7E80C52297C0F32008A129D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B7E80C5B297C0F32008A129D /* PBXTargetDependency */,
+			);
+			name = KurlyUITests;
+			productName = KurlyUITests;
+			productReference = B7E80C54297C0F32008A129D /* KurlyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -534,6 +646,10 @@
 						CreatedOnToolsVersion = 14.2;
 					};
 					B7E80C24297C02E2008A129D = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = B78603802976C6FA000F611F;
+					};
+					B7E80C53297C0F32008A129D = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = B78603802976C6FA000F611F;
 					};
@@ -555,6 +671,7 @@
 			targets = (
 				B78603802976C6FA000F611F /* Kurly */,
 				B7E80C24297C02E2008A129D /* KurlyTests */,
+				B7E80C53297C0F32008A129D /* KurlyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -576,7 +693,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7E80C43297C0556008A129D /* Localizable.stringsdict in Resources */,
+				B7141EF8297EA49E00D90783 /* Assets.xcassets in Resources */,
 				B7E80C44297C0556008A129D /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7E80C52297C0F32008A129D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7E80C8F297C0FEE008A129D /* Assets.xcassets in Resources */,
+				B7E80C90297C0FF4008A129D /* Localizable.strings in Resources */,
+				B7E80C91297C0FF4008A129D /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,38 +769,107 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7E80C28297C02E2008A129D /* KurlyTests.swift in Sources */,
+				B7141EED297EA42900D90783 /* SearchKeywordsView.swift in Sources */,
 				B7E80C40297C0546008A129D /* URLRequestExtension.swift in Sources */,
+				B7141EF2297EA45100D90783 /* GitHubRepositoryView.swift in Sources */,
+				B7141EF4297EA46500D90783 /* ImageView.swift in Sources */,
 				B7E80C33297C053C008A129D /* LogType.swift in Sources */,
 				B7E80C41297C054B008A129D /* UserDefaultsKey.swift in Sources */,
 				B7E80C38297C0546008A129D /* HTTPHeaderValue.swift in Sources */,
+				B7141EEE297EA42F00D90783 /* SearchKeywordView.swift in Sources */,
 				B7E80C32297C0539008A129D /* Logger.swift in Sources */,
 				B7E80C31297C0534008A129D /* LocaleManager.swift in Sources */,
 				B7E80C4B297C057E008A129D /* SearchRequest.swift in Sources */,
+				B7141EF0297EA43E00D90783 /* SearchAutocompleteView.swift in Sources */,
 				B7E80C48297C0571008A129D /* SearchAutoCompletesData.swift in Sources */,
 				B7E80C4F297C0589008A129D /* Search.xcdatamodeld in Sources */,
 				B7E80C45297C0568008A129D /* SearchData.swift in Sources */,
+				B7141EF1297EA44900D90783 /* SearchResultView.swift in Sources */,
+				B7141EF3297EA45100D90783 /* GitHubRepositoryProgressView.swift in Sources */,
 				B7E80C4E297C0586008A129D /* SearchCoreDataManager.swift in Sources */,
 				B7E80C4D297C057E008A129D /* SearchResponse.swift in Sources */,
+				B7E80C6D297C0F7B008A129D /* SearchResultData.swift in Sources */,
 				B7E80C3D297C0546008A129D /* KurlyServer.swift in Sources */,
+				B7141EEB297EA42000D90783 /* KurlyApp.swift in Sources */,
 				B7E80C35297C0546008A129D /* Response.swift in Sources */,
 				B7E80C47297C056D008A129D /* SearchKeyword.swift in Sources */,
 				B7E80C4A297C057E008A129D /* GitHubRepository.swift in Sources */,
 				B7E80C3E297C0546008A129D /* HTTPHeaderField.swift in Sources */,
 				B7E80C49297C0574008A129D /* SearchAutocomplete.swift in Sources */,
 				B7E80C4C297C057E008A129D /* GitHubRepositoryOwner.swift in Sources */,
+				B7141EF7297EA47100D90783 /* ViewExtension.swift in Sources */,
+				B7141EF5297EA46900D90783 /* FramePreferenceKey.swift in Sources */,
+				B7141EF6297EA46D00D90783 /* ToastModifier.swift in Sources */,
 				B7E80C46297C056A008A129D /* SearchKeywordsData.swift in Sources */,
 				B7E80C3B297C0546008A129D /* Host.swift in Sources */,
 				B7E80C36297C0546008A129D /* HTTPHeaderApplicationType.swift in Sources */,
 				B7E80C42297C054F008A129D /* VersionManager.swift in Sources */,
 				B7E80C37297C0546008A129D /* MultipartType.swift in Sources */,
 				B7E80C39297C0546008A129D /* ServiceError.swift in Sources */,
+				B7141EEC297EA42400D90783 /* SearchView.swift in Sources */,
 				B7E80C34297C0541008A129D /* NetworkManager.swift in Sources */,
 				B7E80C2E297C0525008A129D /* DateExtension.swift in Sources */,
+				B7141EEF297EA43900D90783 /* SearchAutoCompletesView.swift in Sources */,
 				B7E80C3C297C0546008A129D /* HTTPMethod.swift in Sources */,
 				B7E80C2F297C0528008A129D /* DateFormat.swift in Sources */,
 				B7E80C30297C0530008A129D /* ImageManager.swift in Sources */,
 				B7E80C3F297C0546008A129D /* HTTPStatusCode.swift in Sources */,
 				B7E80C3A297C0546008A129D /* ServiceURL.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7E80C50297C0F32008A129D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7E80C8C297C0FE3008A129D /* NetworkManager.swift in Sources */,
+				B7E80C68297C0F5B008A129D /* SearchKeyword.swift in Sources */,
+				B7E80C8E297C0FE3008A129D /* DateFormat.swift in Sources */,
+				B7E80C8A297C0FE3008A129D /* LocaleManager.swift in Sources */,
+				B7E80C71297C0F8E008A129D /* GitHubRepositoryOwner.swift in Sources */,
+				B7E80C6B297C0F74008A129D /* SearchResultView.swift in Sources */,
+				B7E80C7E297C0FDC008A129D /* Host.swift in Sources */,
+				B7E80C83297C0FDC008A129D /* HTTPHeaderApplicationType.swift in Sources */,
+				B7E80C7D297C0FDC008A129D /* HTTPHeaderField.swift in Sources */,
+				B7E80C7B297C0FDC008A129D /* VersionManager.swift in Sources */,
+				B7E80C63297C0F4B008A129D /* SearchKeywordsView.swift in Sources */,
+				B7E80C7F297C0FDC008A129D /* Response.swift in Sources */,
+				B7E80C78297C0FC5008A129D /* ImageView.swift in Sources */,
+				B7E80C82297C0FDC008A129D /* URLRequestExtension.swift in Sources */,
+				B7E80C77297C0FC5008A129D /* ViewExtension.swift in Sources */,
+				B7E80C84297C0FDC008A129D /* ServiceError.swift in Sources */,
+				B7E80C73297C0F8E008A129D /* SearchRequest.swift in Sources */,
+				B7E80C6A297C0F6B008A129D /* SearchAutocomplete.swift in Sources */,
+				B7E80C75297C0F94008A129D /* GitHubRepositoryProgressView.swift in Sources */,
+				B7E80C6C297C0F74008A129D /* SearchResultData.swift in Sources */,
+				B7E80C62297C0F43008A129D /* SearchView.swift in Sources */,
+				B7E80C79297C0FC5008A129D /* FramePreferenceKey.swift in Sources */,
+				B7E80C67297C0F58008A129D /* SearchKeywordView.swift in Sources */,
+				B7E80C8B297C0FE3008A129D /* ImageManager.swift in Sources */,
+				B7E80C6F297C0F83008A129D /* Search.xcdatamodeld in Sources */,
+				B7E80C60297C0F3C008A129D /* KurlyApp.swift in Sources */,
+				B7E80C66297C0F51008A129D /* SearchAutoCompletesData.swift in Sources */,
+				B7E80C85297C0FDC008A129D /* HTTPMethod.swift in Sources */,
+				B7E80C81297C0FDC008A129D /* HTTPStatusCode.swift in Sources */,
+				B7E80C88297C0FE3008A129D /* Logger.swift in Sources */,
+				B7E80C69297C0F68008A129D /* SearchAutocompleteView.swift in Sources */,
+				B7E80C6E297C0F81008A129D /* SearchCoreDataManager.swift in Sources */,
+				B7E80C80297C0FDC008A129D /* KurlyServer.swift in Sources */,
+				B7E80C8D297C0FE3008A129D /* LogType.swift in Sources */,
+				B7E80C70297C0F8E008A129D /* GitHubRepository.swift in Sources */,
+				B7E80C76297C0FC5008A129D /* ToastModifier.swift in Sources */,
+				B7E80C86297C0FDC008A129D /* HTTPHeaderValue.swift in Sources */,
+				B7E80C64297C0F4B008A129D /* SearchKeywordsData.swift in Sources */,
+				B7E80C59297C0F32008A129D /* KurlyUITestsLaunchTests.swift in Sources */,
+				B7E80C7C297C0FDC008A129D /* ServiceURL.swift in Sources */,
+				B7E80C72297C0F8E008A129D /* SearchResponse.swift in Sources */,
+				B7E80C57297C0F32008A129D /* KurlyUITests.swift in Sources */,
+				B7E80C7A297C0FDC008A129D /* UserDefaultsKey.swift in Sources */,
+				B7E80C89297C0FE3008A129D /* DateExtension.swift in Sources */,
+				B7E80C74297C0F94008A129D /* GitHubRepositoryView.swift in Sources */,
+				B7E80C65297C0F51008A129D /* SearchAutoCompletesView.swift in Sources */,
+				B7E80C87297C0FDC008A129D /* MultipartType.swift in Sources */,
+				B7E80C61297C0F43008A129D /* SearchData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,6 +880,11 @@
 			isa = PBXTargetDependency;
 			target = B78603802976C6FA000F611F /* Kurly */;
 			targetProxy = B7E80C29297C02E2008A129D /* PBXContainerItemProxy */;
+		};
+		B7E80C5B297C0F32008A129D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B78603802976C6FA000F611F /* Kurly */;
+			targetProxy = B7E80C5A297C0F32008A129D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -919,6 +1121,40 @@
 			};
 			name = Release;
 		};
+		B7E80C5D297C0F33008A129D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C75HZNC664;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nilotic.KurlyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Kurly;
+			};
+			name = Debug;
+		};
+		B7E80C5E297C0F33008A129D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C75HZNC664;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nilotic.KurlyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Kurly;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -945,6 +1181,15 @@
 			buildConfigurations = (
 				B7E80C2B297C02E2008A129D /* Debug */,
 				B7E80C2C297C02E2008A129D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7E80C5C297C0F33008A129D /* Build configuration list for PBXNativeTarget "KurlyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7E80C5D297C0F33008A129D /* Debug */,
+				B7E80C5E297C0F33008A129D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
