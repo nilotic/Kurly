@@ -39,6 +39,17 @@
                ReferencedContainer = "container:Kurly.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B7E80C53297C0F32008A129D"
+               BuildableName = "KurlyUITests.xctest"
+               BlueprintName = "KurlyUITests"
+               ReferencedContainer = "container:Kurly.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
