@@ -72,30 +72,52 @@ final class SearchCoreDataManager: ObservableObject {
         return result.map { SearchAutocomplete(data: $0) }
     }
     
-    func save(keywords: [SearchKeyword]) {
-        Task {
-            do {
-                // Delete All
-                let deleteRequest = NSBatchDeleteRequest(fetchRequest: SearchKeywordEntity.fetchRequest())
-                try managedContext.execute(deleteRequest)
-                
-                
-                // Update
-                for keyword in keywords {
-                    let entity = SearchKeywordEntity(context: managedContext)
-                    entity.keyword = keyword.keyword
-                    entity.date    = keyword.date
-                }
-                
-                guard managedContext.hasChanges else { return }
-                try managedContext.save()
-                
-                guard storeContainer.viewContext.hasChanges else { return }
-                try storeContainer.viewContext.save()
-                
-            } catch {
-                log(.error, error.localizedDescription)
-            }
+    func save(keywords: [SearchKeyword]) async throws {
+        // Delete All
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: SearchKeywordEntity.fetchRequest())
+        try managedContext.execute(deleteRequest)
+        
+        
+        // Update
+        for keyword in keywords {
+            let entity = SearchKeywordEntity(context: managedContext)
+            entity.keyword = keyword.keyword
+            entity.date    = keyword.date
         }
+        
+        guard managedContext.hasChanges else { return }
+        try managedContext.save()
+        
+        guard storeContainer.viewContext.hasChanges else { return }
+        try storeContainer.viewContext.save()
+    }
+    
+    func delete(keyword: SearchKeyword) async throws {
+        let request = SearchKeywordEntity.fetchRequest()
+        request.predicate = NSPredicate(format: "%K = %@", #keyPath(SearchKeywordEntity.keyword), keyword.keyword)
+        request.fetchLimit = 1
+        
+        guard let object = (try managedContext.fetch(request)).first else {
+            throw ServiceError(message: "Failed to find the \(keyword)")
+        }
+                      
+        managedContext.delete(object)
+        
+        guard managedContext.hasChanges else { return }
+        try managedContext.save()
+        
+        guard storeContainer.viewContext.hasChanges else { return }
+        try storeContainer.viewContext.save()
+    }
+
+    func removeAll() async throws {
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: SearchKeywordEntity.fetchRequest())
+        try managedContext.execute(deleteRequest)
+        
+        guard managedContext.hasChanges else { return }
+        try managedContext.save()
+        
+        guard storeContainer.viewContext.hasChanges else { return }
+        try storeContainer.viewContext.save()
     }
 }
