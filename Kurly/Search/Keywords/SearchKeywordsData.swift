@@ -63,11 +63,17 @@ final class SearchKeywordsData: ObservableObject {
             }
             
             let keywords = updatedKeywords
-            SearchCoreDataManager.shared.save(keywords: keywords)
             
-            await MainActor.run {
-                self.originalKeywords = keywords
-                self.keywords         = keywords
+            do {
+                try await SearchCoreDataManager.shared.save(keywords: keywords)
+                
+                await MainActor.run {
+                    self.originalKeywords = keywords
+                    self.keywords         = keywords
+                }
+                
+            } catch {
+                await MainActor.run { toastMessage = error.localizedDescription }
             }
         }
     }
@@ -83,12 +89,19 @@ final class SearchKeywordsData: ObservableObject {
             
             let keywords = updatedKeywords
             
-            await MainActor.run {
-                self.originalKeywords = keywords
+            do {
+                try await SearchCoreDataManager.shared.delete(keyword: keyword)
                 
-                withAnimation(.spring(response: 0.38, dampingFraction: 0.9)) {
-                    self.keywords = keywords
+                await MainActor.run {
+                    self.originalKeywords = keywords
+                    
+                    withAnimation(.spring(response: 0.38, dampingFraction: 0.9)) {
+                        self.keywords = keywords
+                    }
                 }
+            
+            } catch {
+                await MainActor.run { toastMessage = error.localizedDescription }
             }
         }
     }
@@ -97,12 +110,19 @@ final class SearchKeywordsData: ObservableObject {
         task?.cancel()
         
         task = Task {
-            await MainActor.run {
-                self.originalKeywords = []
+            do {
+                try await SearchCoreDataManager.shared.removeAll()
                 
-                withAnimation(.spring(response: 0.38, dampingFraction: 0.9)) {
-                    self.keywords = []
+                await MainActor.run {
+                    self.originalKeywords = []
+                    
+                    withAnimation(.spring(response: 0.38, dampingFraction: 0.9)) {
+                        self.keywords = []
+                    }
                 }
+                
+            } catch {
+                await MainActor.run { toastMessage = error.localizedDescription }
             }
         }
     }
