@@ -33,15 +33,8 @@ struct SearchResultView: View {
             guard isSearching, $0.isEmpty else { return }
             searchData.submittedKeyword = ""
         }
-        .onChange(of: isSearching) {
-            switch $0 {
-            case true:
-                guard searchData.keyword.isEmpty else { return }
-                searchData.submittedKeyword = ""
-                
-            case false:
-                searchData.submittedKeyword = ""
-            }
+        .onChange(of: isSearching) { isSearching in
+            searchData.submittedKeyword = ""
         }
         .onChange(of: searchData.submittedKeyword) {
             data.handle(submittedKeyword: $0)
